@@ -1,0 +1,27 @@
+%caption Transactions
+=hb 'view Mpl.TransactionsIndexHeaderView' do
+  %tr
+    %th Account
+    %th.number Amount
+    %th.date Date when
+    %th
+=hb 'view Mpl.TransactionsIndexFooterView' do
+  %tr
+    %td{:colspan => 4}
+      .pull-right
+        .btn-group
+          %a.btn.btn-primary{:href => '#', :event => {:action => "doNewIncome"}} New income
+          %a.btn{:href => '#', :event => {:action => "doNewExpense"}} New expense
+=hb 'view Mpl.TransactionsIndexBodyView' do
+  =hb 'if content.empty' do
+    =hb 'view Mpl.TransactionsIndexItemView' do
+      %td{:colspan =>4 } You have not defined any transactions.
+  =hb 'each transaction in transactions' do
+    =hb 'view Mpl.TransactionsIndexItemView', :transactionBinding => 'transaction', :classBinding => 'transaction.className' do
+      %td {{transaction.account.name}}
+      %td.number {{transaction.formatted_amount}}
+      %td.date {{transaction.formatted_date_when}}
+      %td
+        .pull-right
+          %a{:href => '#', :event => {:action => "doEditTransaction", :target => 'view'}}
+            Edit

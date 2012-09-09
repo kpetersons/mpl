@@ -1,0 +1,3 @@
+{{outlet navbar}}
+{{outlet flash}}
+{{outlet content}}

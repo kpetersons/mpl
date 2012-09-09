@@ -1,0 +1,15 @@
+.modal-header
+  %h3 Edit account
+=hb 'view Mpl.ErrorsView'
+.modal-body
+  =hb 'view Mpl.AccountFormView', {:contentBinding => 'controller.content'}
+.modal-footer
+  .btn-group
+    %a.btn{'href' => '#', :event => {:action => 'doCancel', :target => 'this'}} Cancel
+    %a.btn.btn-primary{'href' => '#', :event => {:action => 'doSave', :target => 'this'}} Update
+.modal-header
+  %h4 Transactions
+{{outlet transactions}}
+.modal-footer
+  .btn-group
+    %a.btn{'href' => '#', :event => {:action => 'doCancel', :target => 'this'}} Close

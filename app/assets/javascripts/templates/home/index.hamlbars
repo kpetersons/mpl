@@ -1,0 +1,4 @@
+{{outlet accounts}}
+{{outlet transactions}}
+{{outlet modal}}
+

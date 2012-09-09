@@ -1,0 +1,12 @@
+.control-group
+  %label.control-label Date format
+  .controls
+    =hb 'view Ember.TextField', :valueBinding => 'content.date_format'
+.control-group
+  %label.control-label Currency format
+  .controls
+    =hb 'view Ember.TextField', :valueBinding => 'content.currency_format'
+.control-group
+  %label.control-label Currency
+  .controls
+    =hb 'view Ember.TextField', :valueBinding => 'content.currency'

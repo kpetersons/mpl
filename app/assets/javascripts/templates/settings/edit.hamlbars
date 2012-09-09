@@ -1,0 +1,8 @@
+%form.form-horizontal
+  %fieldset
+    %legend
+      %h3 Settings
+    =hb 'view Mpl.SettingFormView', {:contentBinding => 'content'}
+    .form-actions
+      .btn-group.pull-right
+        %a.btn.btn-primary{'href' => '#', :event => {:action => 'doSave', :target => 'this'}} Save

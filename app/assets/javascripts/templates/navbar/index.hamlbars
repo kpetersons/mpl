@@ -1,0 +1,12 @@
+.navbar
+  .navbar-inner
+    %ul.nav
+      = hb 'view Mpl.NavbarItemView' do
+        %a{:href => '#', :event => {:action => 'doHome'}} Home
+      = hb 'view Mpl.NavbarItemView' do
+        %a{:href => '#', :event => {:action => 'doPlans'}} Plans
+      = hb 'view Mpl.NavbarItemView' do
+        %a{:href => '#', :event => {:action => 'doSettings'}} Settings
+    %ul.nav.pull-right
+      = hb 'view Mpl.NavbarItemView' do
+        %a{:href => '#', :event => {:action => 'doSignOut'}} Sign out

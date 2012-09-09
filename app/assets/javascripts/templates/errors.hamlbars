@@ -1,0 +1,4 @@
+=hb 'with content.errors' do
+  %ul.alert.alert-error.unstyled
+    =hb 'each error in this' do
+      %li {{error.fieldError}}

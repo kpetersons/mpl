@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %title Mpl
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    = yield
+    :javascript
+      Mpl.user_id = #{current_user.id}
+      Mpl.setting_id = #{current_user.setting_id}
+      Mpl.initialize();
