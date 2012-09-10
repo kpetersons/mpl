@@ -2,14 +2,15 @@
 #
 # Table name: transactions
 #
-#  id         :integer          not null, primary key
-#  user_id    :integer
-#  account_id :integer
-#  type       :string(255)
-#  amount     :decimal(8, 2)
-#  date_when  :date
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id          :integer          not null, primary key
+#  user_id     :integer
+#  account_id  :integer
+#  type        :string(255)
+#  amount      :decimal(8, 2)
+#  date_when   :date
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  category_id :integer
 #
 
 class Transaction < ActiveRecord::Base

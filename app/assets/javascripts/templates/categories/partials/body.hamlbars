@@ -1,0 +1,6 @@
+=hb 'if categories.empty' do
+  %tr
+    %td{:colspan =>7 } You have not defined any categories.
+=hb 'each category in controller.categories' do
+  %tr
+    =hb 'view Mpl.CategoriesBodyItemView', :categoryBinding => 'category'

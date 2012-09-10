@@ -1,4 +1,5 @@
 #= require ./home_router
+#= require ./category_router
 #= require ./plan_router
 #= require ./setting_router
 #= require_self
@@ -22,6 +23,7 @@ Mpl.Router = Ember.Router.extend
       doHome: (router, event) ->
         router.transitionTo('home.index')
 
+      doCategories: (router, event) -> router.transitionTo('categories.index')
       doPlans: (router, event) -> router.transitionTo('plans.index')
       doSettings: (router, event) -> router.transitionTo('settings.index')
       doSignOut: (router, event) ->
@@ -38,5 +40,6 @@ Mpl.Router = Ember.Router.extend
         redirectsTo: 'home.index'
 
       home: Mpl.HomeRouter
+      categories: Mpl.CategoryRouter
       plans: Mpl.PlanRouter
       settings: Mpl.SettingRouter

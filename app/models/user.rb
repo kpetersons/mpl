@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   has_many :accounts
   has_many :transactions
   has_many :settings
+  has_many :categories
 
   def as_json(options = nil)
     super(:only => [:id, :email], :methods => [:account_ids, :transaction_ids, :setting_id])

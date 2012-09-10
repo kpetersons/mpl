@@ -1,0 +1,4 @@
+%caption Categories
+=hb 'view Mpl.CategoriesIndexHeaderView'
+=hb 'view Mpl.CategoriesIndexFooterView'
+=hb 'view Mpl.CategoriesIndexBodyView'

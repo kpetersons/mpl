@@ -10,6 +10,7 @@ Mpl::Application.routes.draw do
   resources :accounts
   resources :transactions
   resources :settings
+  resources :categories
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

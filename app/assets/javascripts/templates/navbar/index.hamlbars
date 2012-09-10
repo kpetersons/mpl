@@ -4,6 +4,8 @@
       = hb 'view Mpl.NavbarItemView' do
         %a{:href => '#', :event => {:action => 'doHome'}} Home
       = hb 'view Mpl.NavbarItemView' do
+        %a{:href => '#', :event => {:action => 'doCategories'}} Categories
+      = hb 'view Mpl.NavbarItemView' do
         %a{:href => '#', :event => {:action => 'doPlans'}} Plans
       = hb 'view Mpl.NavbarItemView' do
         %a{:href => '#', :event => {:action => 'doSettings'}} Settings

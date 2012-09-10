@@ -6,6 +6,7 @@ Mpl.Transaction = DS.Model.extend
 
   user        : DS.belongsTo('Mpl.User')
   account     : DS.belongsTo('Mpl.Account')
+  category     : DS.belongsTo('Mpl.Category')
 
   isValid: ->
     @set('validationErrors', null)
