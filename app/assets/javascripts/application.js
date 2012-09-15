@@ -15,7 +15,7 @@
 //= require twitter/bootstrap
 //= require bootstrap-datepicker
 //= require moment
-//= require ./moment-range
+//= require moment-range
 //= require accounting
 //= require handlebars
 //= require ember

@@ -1,0 +1,6 @@
+=hb 'if accounts.empty' do
+  %tr
+    %td{:colspan =>7 } You have not defined any accounts.
+=hb 'each account in controller.accounts' do
+  %tr
+    =hb 'view Mpl.AccountsBodyItemView', :accountBinding => 'account', :classBinding => 'account.className'

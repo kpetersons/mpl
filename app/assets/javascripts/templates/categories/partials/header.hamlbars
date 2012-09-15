@@ -1,5 +1,6 @@
 %tr
   %th Name
+  %th Type
   %th.span5 Description
   %th.number Balance
   %th.number Today

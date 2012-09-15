@@ -1,0 +1,7 @@
+%tr
+  %th Account
+  %th Category
+  %th Description
+  %th.number Amount
+  %th.date Date when
+  %th

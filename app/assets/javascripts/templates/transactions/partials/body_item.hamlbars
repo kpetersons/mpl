@@ -1,0 +1,9 @@
+%td {{transaction.account.name}}
+%td {{transaction.category.name}}
+%td {{transaction.description}}
+%td.number {{transaction.formatted_amount}}
+%td.date {{transaction.formatted_date_when}}
+%td
+  .pull-right
+    %a{:href => '#', :event => {:action => "doEditTransaction", :target => 'view'}}
+      Edit

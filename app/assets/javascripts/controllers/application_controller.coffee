@@ -1,4 +1,6 @@
-Mpl.ApplicationController = Ember.Controller.extend()
+Mpl.ApplicationController = Ember.Controller.extend(
+
+)
 
 Mpl.FlashController = Ember.Controller.extend()
 

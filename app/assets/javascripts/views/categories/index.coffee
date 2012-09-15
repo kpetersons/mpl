@@ -1,3 +1,7 @@
+Mpl.CategoriesHomeView = Ember.View.extend(
+  templateName: 'templates/categories/home'
+);
+
 Mpl.CategoriesIndexView = Ember.View.extend(
   templateName: 'templates/categories/index'
   tagName: 'table'
@@ -26,3 +30,7 @@ Mpl.CategoriesBodyItemView = Ember.View.extend(
   doEditCategory: ->
     @get('controller.target').send('doEditCategory', @get('category'))
 );
+
+Mpl.CategoriesIndexEmptyView = Ember.View.extend(
+  template: ''
+)

@@ -8,6 +8,7 @@ Mpl::Application.routes.draw do
   match 'users/:id' => 'users#show', :as => :show_user
 
   resources :accounts
+  resources :account_transfers
   resources :transactions
   resources :settings
   resources :categories

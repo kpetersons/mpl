@@ -1,0 +1,21 @@
+%form.form-horizontal
+  .control-group
+    %label.control-label From
+    .controls
+      =hb 'view Ember.Select', :contentBinding => 'accounts', :optionLabelPath =>'content.name', :optionValuePath => 'content.id', :selectionBinding => 'content.account', :prompt => '...'
+  .control-group
+    %label.control-label To
+    .controls
+      =hb 'view Ember.Select', :contentBinding => 'accounts', :optionLabelPath =>'content.name', :optionValuePath => 'content.id', :selectionBinding => 'content.account', :prompt => '...'
+  .control-group
+    %label.control-label Amount
+    .controls
+      =hb 'view Ember.TextField', :valueBinding => 'content.amount'
+  .control-group
+    %label.control-label Date when
+    .controls
+      =hb 'view Ember.TextField', :valueBinding => 'content.date_when'
+  .control-group
+    %label.control-label Comment
+    .controls
+      =hb 'view Ember.TextArea', :valueBinding => 'content.description'

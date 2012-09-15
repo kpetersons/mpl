@@ -1,10 +1,11 @@
-%td {{account.name}}
-%td {{account.description}}
-%td.number {{account.formatted_total_all}}
-%td.number {{account.formatted_total_today}}
-%td.number {{account.formatted_total_week}}
-%td.number {{account.formatted_total_month}}
+%td {{category.name}}
+%td {{category.type}}
+%td {{category.description}}
+%td.number {{category.formatted_total_all}}
+%td.number {{category.formatted_total_today}}
+%td.number {{category.formatted_total_week}}
+%td.number {{category.formatted_total_month}}
 %td
   .pull-right
-    %a{:href => '#', :event => {:action => "doEditAccount", :target => 'view'}}
+    %a{:href => '#', :event => {:action => "doEditCategory", :target => 'view'}}
       Edit

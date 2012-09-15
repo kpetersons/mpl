@@ -8,4 +8,22 @@ Mpl.Category = DS.Model.extend(
   user         : DS.belongsTo('Mpl.User')
   transactions : DS.hasMany('Mpl.Transaction', key: 'transaction_ids')
 
+  isValid: ->
+    @set('validationErrors', null)
+    errors = Ember.ArrayProxy.create({ content: Ember.A() });
+    if @isEmpty(@get('name'))
+      errors.pushObject
+        'fieldError': 'Category name is mandatory!'
+        'fieldName': 'name'
+    unless errors.get('empty')
+      @set('validationErrors', errors)
+    return errors.get('empty')
+
+  errors: (->
+    @get('validationErrors')
+  ).property('validationErrors')
+
+  persist: ->
+    @save()
+
 )

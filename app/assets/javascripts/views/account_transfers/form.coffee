@@ -1,9 +1,9 @@
-Mpl.AccountFormView = Ember.View.extend(
-  templateName: 'templates/home/accounts/partials/form'
+Mpl.AccountTransferFormView = Ember.View.extend(
+  templateName: 'templates/account_transfers/partials/form'
 )
 
-Mpl.NewAccountView = Ember.View.extend(
-  templateName: 'templates/home/accounts/new'
+Mpl.NewAccountTransferView = Ember.View.extend(
+  templateName: 'templates/account_transfers/new'
   classNames: ['modal']
 
   didInsertElement: ->
@@ -34,6 +34,6 @@ Mpl.NewAccountView = Ember.View.extend(
       return
 )
 
-Mpl.EditAccountView = Mpl.NewAccountView.extend(
-  templateName: 'templates/home/accounts/edit'
+Mpl.EditAccountTransferView = Mpl.NewAccountTransferView.extend(
+  templateName: 'templates/account_transfers/edit'
 )

@@ -1,9 +1,9 @@
 Mpl.CategoryFormView = Ember.View.extend(
-  templateName: 'templates/home/categories/partials/form'
+  templateName: 'templates/categories/partials/form'
 )
 
 Mpl.NewCategoryView = Ember.View.extend(
-  templateName: 'templates/home/categories/new'
+  templateName: 'templates/categories/new'
   classNames: ['modal']
 
   didInsertElement: ->
@@ -35,5 +35,5 @@ Mpl.NewCategoryView = Ember.View.extend(
 )
 
 Mpl.EditCategoryView = Mpl.NewCategoryView.extend(
-  templateName: 'templates/home/categories/edit'
+  templateName: 'templates/categories/edit'
 )

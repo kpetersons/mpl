@@ -1,0 +1,8 @@
+%tr
+  %th Name
+  %th.span5 Description
+  %th.number Balance
+  %th.number Today
+  %th.number Week
+  %th.number Month
+  %th

@@ -1,4 +1,13 @@
 %tr
-  %td{:colspan => 7}
-    .pull-right
-      %a.btn.btn-primary{:href => '#', :event => {:action => "doNewCategory"}} New category
+  %td{:colspan => 8}
+    .btn-group.pull-right
+      %a.btn.btn-primary{:href => '#', :event => {:action => "doNewIncomeCategory"}} New income category
+      %a.btn{:href => '#', :event => {:action => "doNewExpenseCategory"}} New expense category
+      %a.btn.dropdown-toggle{:href =>'#', 'data-toggle' => 'dropdown'}
+        %i.icon-cog
+        %span.caret
+      %ul.dropdown-menu
+        %li
+          %a{:href => '#', :event => {:action => "doGroup"}} Group
+        %li
+          %a{:href => '#', :event => {:action => "doUnGroup"}} Ungroup

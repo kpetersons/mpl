@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120910145428) do
+ActiveRecord::Schema.define(:version => 20120915092723) do
+
+  create_table "account_transfers", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "from_transaction_id"
+    t.integer  "to_transaction_id"
+    t.string   "description"
+    t.date     "date_when"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
 
   create_table "accounts", :force => true do |t|
     t.integer  "user_id"
@@ -26,8 +36,17 @@ ActiveRecord::Schema.define(:version => 20120910145428) do
     t.string   "name"
     t.string   "description"
     t.string   "type"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+    t.integer  "category_group_id"
+    t.boolean  "user_type",         :default => true
+  end
+
+  create_table "category_groups", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "settings", :force => true do |t|
@@ -48,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20120910145428) do
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
     t.integer  "category_id"
+    t.text     "description"
   end
 
   create_table "users", :force => true do |t|

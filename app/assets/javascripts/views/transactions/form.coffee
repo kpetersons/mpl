@@ -1,14 +1,10 @@
 Mpl.TransactionFormView = Ember.View.extend(
-  templateName: 'templates/home/transactions/form'
+  templateName: 'templates/transactions/partials/form'
 )
 
 Mpl.NewTransactionView = Ember.View.extend(
-  templateName: 'templates/home/transactions/new'
+  templateName: 'templates/transactions/new'
   classNames: ['modal']
-
-  accounts: (->
-    @get('controller.accounts')
-  ).property('controller.accounts')
 
   didInsertElement: ->
     @open()
@@ -39,5 +35,5 @@ Mpl.NewTransactionView = Ember.View.extend(
 )
 
 Mpl.EditTransactionView = Mpl.NewTransactionView.extend(
-  templateName: 'templates/home/transactions/edit'
+  templateName: 'templates/transactions/edit'
 )

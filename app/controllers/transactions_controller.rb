@@ -8,6 +8,19 @@ class TransactionsController < ApplicationController
     render :json => {:transactions => current_user.transactions}
   end
 
+  def show
+    unless params[:id]
+      render :json => {:transaction => {}} and return
+    end
+    transaction = current_user.transactions.where(:id => params[:id]).first
+    if transaction.save
+      render :json => {:transaction => transaction}
+    else
+      render :json => {:transaction => transaction}, :status => 422
+    end
+  end
+
+
   def create
     transaction = current_user.transactions.build(params[:transaction])
     if transaction.save

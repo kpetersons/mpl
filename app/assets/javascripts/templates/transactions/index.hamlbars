@@ -1,0 +1,4 @@
+%caption Transactions
+=hb 'view Mpl.TransactionsIndexHeaderView'
+=hb 'view Mpl.TransactionsIndexFooterView'
+=hb 'view Mpl.TransactionsIndexBodyView'
