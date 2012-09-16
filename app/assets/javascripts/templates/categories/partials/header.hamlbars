@@ -1,9 +1,16 @@
 %tr
-  %th Name
-  %th Type
-  %th.span5 Description
-  %th.number Balance
-  %th.number Today
-  %th.number Week
-  %th.number Month
+  %th
+    = hb 'view Mpl.I18nView', :value => "categories.name"
+  %th
+    = hb 'view Mpl.I18nView', :value => "categories.type"
+  %th.span5
+    = hb 'view Mpl.I18nView', :value => "categories.description"
+  %th.number
+    = hb 'view Mpl.I18nView', :value => "categories.balance"
+  %th.number
+    = hb 'view Mpl.I18nView', :value => "categories.today"
+  %th.number
+    = hb 'view Mpl.I18nView', :value => "categories.week"
+  %th.number
+    = hb 'view Mpl.I18nView', :value => "categories.month"
   %th

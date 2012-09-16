@@ -1,5 +1,7 @@
 %tr
   %td{:colspan => 7}
     .btn-group.pull-right
-      %a.btn.btn-primary{:href => '#', :event => {:action => "doNewAccount"}} New account
-      %a.btn{:href => '#', :event => {:action => "doNewAccountTransfer"}} Transfer between accounts
+      %a.btn.btn-primary{:href => '#', :event => {:action => "doNewAccount"}}
+        = hb 'view Mpl.I18nView', :value => "accounts.new"
+      %a.btn{:href => '#', :event => {:action => "doNewAccountTransfer"}}
+        = hb 'view Mpl.I18nView', :value => "accounts.new_account_transfer"

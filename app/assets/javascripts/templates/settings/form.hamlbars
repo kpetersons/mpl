@@ -1,12 +1,15 @@
 .control-group
-  %label.control-label Date format
+  %label.control-label
+    = hb 'view Mpl.I18nView', :value => "settings.date_format"
   .controls
     =hb 'view Ember.TextField', :valueBinding => 'content.date_format'
 .control-group
-  %label.control-label Currency format
+  %label.control-label
+    = hb 'view Mpl.I18nView', :value => "settings.currency_format"
   .controls
     =hb 'view Ember.TextField', :valueBinding => 'content.currency_format'
 .control-group
-  %label.control-label Currency
+  %label.control-label
+    = hb 'view Mpl.I18nView', :value => "settings.currency"
   .controls
     =hb 'view Ember.TextField', :valueBinding => 'content.currency'

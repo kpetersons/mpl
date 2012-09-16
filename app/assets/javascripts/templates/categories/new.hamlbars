@@ -1,9 +1,12 @@
 .modal-header
-  %h3 New category
+  %h3
+    = hb 'view Mpl.I18nView', :value => "categories.new_title"
 =hb 'view Mpl.ErrorsView'
 .modal-body
   =hb 'view Mpl.CategoryFormView', {:contentBinding => 'controller.content'}
 .modal-footer
   .btn-group
-    %a.btn{'href' => '#', :event => {:action => 'doCancel', :target => 'this'}} Cancel
-    %a.btn.btn-primary{'href' => '#', :event => {:action => 'doSave', :target => 'this'}} Create
+    %a.btn{'href' => '#', :event => {:action => 'doCancel', :target => 'this'}}
+      = hb 'view Mpl.I18nView', :value => "form.cancel"
+    %a.btn.btn-primary{'href' => '#', :event => {:action => 'doSave', :target => 'this'}}
+      = hb 'view Mpl.I18nView', :value => "form.create"

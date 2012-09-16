@@ -1,9 +1,11 @@
 %form.form-horizontal
   .control-group
-    %label.control-label Name
+    %label.control-label
+      = hb 'view Mpl.I18nView', :value => "categories.name"
     .controls
       =hb 'view Ember.TextField', :valueBinding => 'content.name'
   .control-group
-    %label.control-label Description
+    %label.control-label
+      = hb 'view Mpl.I18nView', :value => "categories.description"
     .controls
       =hb 'view Ember.TextArea', :valueBinding => 'content.description'

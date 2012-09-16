@@ -1,6 +1,6 @@
 =hb 'if controller.categories.empty' do
   %tr
-    %td{:colspan =>8 } You have not defined any categories.
+    %td{:colspan =>8 }
 =hb 'each category in controller.categories' do
   %tr
     =hb 'view Mpl.CategoriesBodyItemView', :categoryBinding => 'category', :classBinding => 'category.className'

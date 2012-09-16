@@ -1,8 +1,14 @@
 %tr
-  %th Name
-  %th.span5 Description
-  %th.number Balance
-  %th.number Today
-  %th.number Week
-  %th.number Month
+  %th
+    = hb 'view Mpl.I18nView', :value => "accounts.name"
+  %th.span5
+    = hb 'view Mpl.I18nView', :value => "accounts.description"
+  %th.number
+    = hb 'view Mpl.I18nView', :value => "accounts.balance"
+  %th.number
+    = hb 'view Mpl.I18nView', :value => "accounts.today"
+  %th.number
+    = hb 'view Mpl.I18nView', :value => "accounts.week"
+  %th.number
+    = hb 'view Mpl.I18nView', :value => "accounts.month"
   %th

@@ -1,15 +1,20 @@
 .modal-header
-  %h3 Edit category
+  %h3
+    = hb 'view Mpl.I18nView', :value => "categories.edit_title"
 =hb 'view Mpl.ErrorsView'
 .modal-body
   =hb 'view Mpl.CategoryFormView', {:contentBinding => 'controller.content'}
 .modal-footer
   .btn-group
-    %a.btn{'href' => '#', :event => {:action => 'doCancel', :target => 'this'}} Cancel
-    %a.btn.btn-primary{'href' => '#', :event => {:action => 'doSave', :target => 'this'}} Update
+    %a.btn{'href' => '#', :event => {:action => 'doCancel', :target => 'this'}}
+      = hb 'view Mpl.I18nView', :value => "form.cancel"
+    %a.btn.btn-primary{'href' => '#', :event => {:action => 'doSave', :target => 'this'}}
+      = hb 'view Mpl.I18nView', :value => "form.update"
 .modal-header
-  %h4 Transactions
+  %h4
+    = hb 'view Mpl.I18nView', :value => "transactions.transactions"
 {{outlet transactions}}
 .modal-footer
   .btn-group
-    %a.btn{'href' => '#', :event => {:action => 'doCancel', :target => 'this'}} Close
+    %a.btn{'href' => '#', :event => {:action => 'doCancel', :target => 'this'}}
+      = hb 'view Mpl.I18nView', :value => "form.close"
