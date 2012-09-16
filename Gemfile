@@ -31,6 +31,7 @@ gem 'ember-rails', :git => "git://github.com/emberjs/ember-rails.git"
 gem 'jquery-rails', '~> 2.0.3'
 gem 'thin'
 gem 'momentjs-rails'
+gem 'i18n-js'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

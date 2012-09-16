@@ -7,4 +7,4 @@
 %td
   .pull-right
     %a{:href => '#', :event => {:action => "doEditAccount", :target => 'view'}}
-      Edit
+      = hb 'view Mpl.I18nView', :value => "form.edit"

@@ -7,7 +7,7 @@ class AccountTransfersController < ApplicationController
   end
 
   def show
-    render :json => {:account_transfers => current_user.account_transfers.where(:id => params[:id]).first}
+    render :json => {:account_transfer => current_user.account_transfers.where(:id => params[:id]).first}
   end
 
   def create
@@ -37,14 +37,15 @@ class AccountTransfersController < ApplicationController
           :date_when => transfer_date,
           :type => 'expense',
           :category_id => from_transaction_category.id,
-          :description => description
+          :description => "#{from_account.name} -> #{to_account.name}"
       )
       to_transaction = current_user.transactions.create(
           :account_id => to_account.id,
           :amount => amount,
           :date_when => transfer_date,
           :type => 'income',
-          :category_id => to_transaction_category.id
+          :category_id => to_transaction_category.id,
+          :description => "#{from_account.name} -> #{to_account.name}"
       )
 
       account_transfer = current_user.account_transfers.build(

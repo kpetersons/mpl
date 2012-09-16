@@ -1,4 +1,5 @@
-%caption Accounts
+%caption
+  = hb 'view Mpl.I18nView', :value => "account_transfers.account_transfers"
 =hb 'view Mpl.AccountsIndexHeaderView'
 =hb 'view Mpl.AccountsIndexFooterView'
 =hb 'view Mpl.AccountsIndexBodyView'

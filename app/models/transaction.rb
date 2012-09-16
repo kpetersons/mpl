@@ -22,7 +22,8 @@ class Transaction < ActiveRecord::Base
   belongs_to :user
   belongs_to :account
 
-  has_one :account_transfer
+  has_one :from_account_transfer, :class_name => 'AccountTransfer',    :foreign_key => :from_transaction_id
+  has_one :to_account_transfer,   :class_name => 'AccountTransfer',    :foreign_key => :to_transaction_id
 
   validates :user_id,     :presence => true
   validates :account_id,  :presence => true
@@ -33,5 +34,15 @@ class Transaction < ActiveRecord::Base
   def as_json(options = nil)
     super(:except => [:created_at, :updated_at], :methods => [:errors, :account_transfer_id])
   end
+
+  def account_transfer_id
+    if from_account_transfer
+      return from_account_transfer.id
+    end
+    if to_account_transfer
+      return to_account_transfer.id
+    end
+  end
+
 
 end

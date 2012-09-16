@@ -1,6 +1,8 @@
 Mpl.TransactionRouter = Ember.Route.extend
   route: '/transactions'
 
+  account_transfers: Mpl.AccountTransferRouter
+
   connectOutlets: (router, event) ->
     router.get('applicationController').set('isHomeActive', '');
     router.get('applicationController').set('isAccountsActive', '');
@@ -22,7 +24,11 @@ Mpl.TransactionRouter = Ember.Route.extend
     router.transaction_type = 'expense'
     router.transitionTo('transactions.new')
 
-  doEditTransaction: (router, event) -> router.transitionTo('transactions.edit', event)
+  doEditTransaction: (router, event) ->
+    unless event.get('account_transfer')
+      router.transitionTo('transactions.edit', event)
+    else
+      router.transitionTo('account_transfers.edit', event.get('account_transfer'))
 
   doCancel: (router, event) ->
     router.transitionTo('transactions.index')

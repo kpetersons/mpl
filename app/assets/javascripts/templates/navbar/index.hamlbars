@@ -2,17 +2,32 @@
   .navbar-inner
     %ul.nav
       = hb 'view Mpl.NavbarItemView', :classBinding => 'isHomeActive' do
-        %a{:href => '#', :event => {:action => 'doHome'}} Home
+        %a{:href => '#', :event => {:action => 'doHome'}}
+          = hb 'view Mpl.I18nView', :value => "menu.home"
       = hb 'view Mpl.NavbarItemView', :classBinding => 'isAccountsActive' do
-        %a{:href => '#', :event => {:action => 'doAccounts'}} Accounts
+        %a{:href => '#', :event => {:action => 'doAccounts'}}
+          = hb 'view Mpl.I18nView', :value => "menu.accounts"
       = hb 'view Mpl.NavbarItemView', :classBinding => 'isTransactionsActive' do
-        %a{:href => '#', :event => {:action => 'doTransactions'}} Transactions
+        %a{:href => '#', :event => {:action => 'doTransactions'}}
+          = hb 'view Mpl.I18nView', :value => "menu.transactions"
       = hb 'view Mpl.NavbarItemView', :classBinding => 'isCategoriesActive' do
-        %a{:href => '#', :event => {:action => 'doCategories'}} Categories
+        %a{:href => '#', :event => {:action => 'doCategories'}}
+          = hb 'view Mpl.I18nView', :value => "menu.categories"
       = hb 'view Mpl.NavbarItemView', :classBinding => 'isPlansActive' do
-        %a{:href => '#', :event => {:action => 'doPlans'}} Plans
-      = hb 'view Mpl.NavbarItemView', :classBinding => 'isSettingsActive' do
-        %a{:href => '#', :event => {:action => 'doSettings'}} Settings
+        %a{:href => '#', :event => {:action => 'doPlans'}}
+          = hb 'view Mpl.I18nView', :value => "menu.plans"
+      %li.dropdown
+        %a.dropdown-toggle{:href => '#', 'data-toggle' => 'dropdown'}
+          %span.icon-cog
+          %b.caret
+        %ul.dropdown-menu
+          %li
+            %a{:href => '#', :event => {:action => 'doLanguages'}}
+              = hb 'view Mpl.I18nView', :value => "menu.languages"
+          %li
+            %a{:href => '#', :event => {:action => 'doSettings'}}
+              = hb 'view Mpl.I18nView', :value => "menu.settings"
     %ul.nav.pull-right
       = hb 'view Mpl.NavbarItemView' do
-        %a{:href => '#', :event => {:action => 'doSignOut'}} Sign out
+        %a{:href => '#', :event => {:action => 'doSignOut'}}
+          = hb 'view Mpl.I18nView', :value => "menu.sign_out"

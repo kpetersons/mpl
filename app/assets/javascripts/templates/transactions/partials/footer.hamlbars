@@ -2,5 +2,8 @@
   %td{:colspan => 6}
     .pull-right
       .btn-group
-        %a.btn.btn-primary{:href => '#', :event => {:action => "doNewIncome"}} New income
-        %a.btn{:href => '#', :event => {:action => "doNewExpense"}} New expense
+        %a.btn.btn-primary{:href => '#', :event => {:action => "doNewIncome"}}
+          = hb 'view Mpl.I18nView', :value => 'transactions.new_income'
+        New income
+        %a.btn{:href => '#', :event => {:action => "doNewExpense"}}
+          = hb 'view Mpl.I18nView', :value => 'transactions.new_expense'

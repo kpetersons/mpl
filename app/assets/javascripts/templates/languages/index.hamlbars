@@ -1,0 +1,30 @@
+.modal-header
+  %h3 Choose language
+.modal-body
+  %table
+    %tbody
+      %tr
+        %td.span2
+          .well.well-small.like-well{'data-language' => 'lv'}
+            Latviešu
+            %img{:src => 'assets/Latvia-Flag-16.png'}
+        %td.span2
+          .well.well-small.like-well{'data-language' => 'en'}
+            English
+            %img{:src => 'assets/England-Flag-16.png'}
+        %td.span2
+          .well.well-small.like-well{'data-language' => 'de'}
+            Deutsch
+            %img{:src => 'assets/Germany-Flag-16.png'}
+      %tr
+        %td.span2
+          .well.well-small.like-well{'data-language' => 'ru'}
+            Русский
+            %img{:src => 'assets/Russia-Flag-16.png'}
+        %td.span2
+        %td.span2
+        %td.span2
+.modal-footer
+  .btn-group
+    %a.btn{'href' => '#', :event => {:action => 'doCancel', :target => 'this'}} Cancel
+    %a.btn.btn-primary{'href' => '#', :event => {:action => 'doSave', :target => 'this'}} Apply

@@ -20,6 +20,8 @@
 //= require handlebars
 //= require ember
 //= require ember-data
+//= require i18n
+//= require i18n/translations/translations
 //= require_self
 //= require mpl
 Mpl = Ember.Application.create();

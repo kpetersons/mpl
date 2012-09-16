@@ -1,21 +1,26 @@
 %form.form-horizontal
   .control-group
-    %label.control-label From
+    %label.control-label
+      = hb 'view Mpl.I18nView', :value => 'transactions.account_from'
     .controls
       =hb 'view Ember.Select', :contentBinding => 'accounts', :optionLabelPath =>'content.name', :optionValuePath => 'content.id', :selectionBinding => 'content.account', :prompt => '...'
   .control-group
-    %label.control-label To
+    %label.control-label
+      = hb 'view Mpl.I18nView', :value => 'transactions.account_to'
     .controls
       =hb 'view Ember.Select', :contentBinding => 'accounts', :optionLabelPath =>'content.name', :optionValuePath => 'content.id', :selectionBinding => 'content.account', :prompt => '...'
   .control-group
-    %label.control-label Amount
+    %label.control-label
+      = hb 'view Mpl.I18nView', :value => 'transactions.amount'
     .controls
       =hb 'view Ember.TextField', :valueBinding => 'content.amount'
   .control-group
-    %label.control-label Date when
+    %label.control-label
+      = hb 'view Mpl.I18nView', :value => 'transactions.date_when'
     .controls
       =hb 'view Ember.TextField', :valueBinding => 'content.date_when'
   .control-group
-    %label.control-label Comment
+    %label.control-label
+      = hb 'view Mpl.I18nView', :value => 'transactions.description'
     .controls
       =hb 'view Ember.TextArea', :valueBinding => 'content.description'

@@ -1,7 +1,12 @@
 %tr
-  %th Account
-  %th Category
-  %th Description
-  %th.number Amount
-  %th.date Date when
+  %th
+    = hb 'view Mpl.I18nView', :value => 'transactions.account'
+  %th
+    = hb 'view Mpl.I18nView', :value => 'transactions.category'
+  %th
+    = hb 'view Mpl.I18nView', :value => 'transactions.description'
+  %th.number
+    = hb 'view Mpl.I18nView', :value => 'transactions.amount'
+  %th.date
+    = hb 'view Mpl.I18nView', :value => 'transactions.date_when'
   %th
