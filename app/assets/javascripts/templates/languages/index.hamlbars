@@ -1,5 +1,6 @@
 .modal-header
-  %h3 Choose language
+  %h3
+    = hb 'view Mpl.I18nView', :value => "language.edit_title"
 .modal-body
   %table
     %tbody
@@ -26,5 +27,7 @@
         %td.span2
 .modal-footer
   .btn-group
-    %a.btn{'href' => '#', :event => {:action => 'doCancel', :target => 'this'}} Cancel
-    %a.btn.btn-primary{'href' => '#', :event => {:action => 'doSave', :target => 'this'}} Apply
+    %a.btn{'href' => '#', :event => {:action => 'doCancel', :target => 'this'}}
+      = hb 'view Mpl.I18nView', :value => "form.cancel"
+    %a.btn.btn-primary{'href' => '#', :event => {:action => 'doSave', :target => 'this'}}
+      = hb 'view Mpl.I18nView', :value => "form.save"

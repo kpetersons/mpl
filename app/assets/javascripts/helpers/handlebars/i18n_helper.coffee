@@ -24,7 +24,4 @@ Mpl.I18nView = Ember.View.extend (
       return I18n.translate(@get('value'))
   ).property('Mpl.language', 'value')
 
-  didInsertElement: ->
-    console.log @, @get('value'), @get('content')
-
 )

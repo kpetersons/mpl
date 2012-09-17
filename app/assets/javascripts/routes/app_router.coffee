@@ -22,7 +22,8 @@ Mpl.Router = Ember.Router.extend
         Mpl.store.find(Mpl.AccountTransfer)
         Mpl.store.find(Mpl.Transaction)
         Mpl.store.find(Mpl.Category)
-        Mpl.set('language', I18n.defaultLocale)
+        Mpl.set('setting', Mpl.Setting.find(Mpl.setting_id))
+
       connectOutlets: (router, event) ->
         walkState = (state) ->
           console.log state.get('path')
@@ -51,10 +52,12 @@ Mpl.Router = Ember.Router.extend
       doPlans: (router, event) ->
         router.transitionTo('plans.index')
       doSettings: (router, event) ->
-        router.transitionTo('settings.index')
+        $(event.target).parents('.dropdown').toggleClass('open')
+        router.get('applicationController').connectOutlet('shared_modal', 'settingsIndex', Mpl.Setting.find(Mpl.setting_id))
+
       doLanguages: (router, event) ->
         $(event.target).parents('.dropdown').toggleClass('open')
-        router.get('applicationController').connectOutlet('shared_modal', 'languagesIndex')
+        router.get('applicationController').connectOutlet('shared_modal', 'languagesIndex', Mpl.Setting.find(Mpl.setting_id))
 
 
       doSignOut: (router, event) ->
@@ -75,7 +78,7 @@ Mpl.Router = Ember.Router.extend
       transactions: Mpl.TransactionRouter
       categories: Mpl.CategoryRouter
       plans: Mpl.PlanRouter
-      settings: Mpl.SettingRouter
+#      settings: Mpl.SettingRouter
       languages: Ember.Route.extend(
         route: '/languages'
         index: Ember.Route.extend(
@@ -84,3 +87,9 @@ Mpl.Router = Ember.Router.extend
             router.get('applicationController').connectOutlet('shared_modal', 'languagesIndex')
         )
       )
+
+  settingObserver: ((obj, key)->
+    console.log 'Loaded settings', Mpl.get('setting'), Mpl.get('setting.language'), Mpl.get('setting').get('language')
+    Mpl.set('language', Mpl.get('setting.language'))
+    I18n.locale = Mpl.get('language')
+  ).observes('Mpl.setting.language', 'Mpl.setting')

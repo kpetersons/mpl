@@ -9,6 +9,7 @@
 #  currency        :string(255)
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  language        :string(255)      default("en")
 #
 
 require 'test_helper'

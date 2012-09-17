@@ -2,5 +2,4 @@
   %tr
     %td{:colspan =>8 }
 =hb 'each category in controller.categories' do
-  %tr
-    =hb 'view Mpl.CategoriesBodyItemView', :categoryBinding => 'category', :classBinding => 'category.className'
+  =hb 'view Mpl.CategoriesBodyItemView', :categoryBinding => 'category', :classBinding => 'category.className'

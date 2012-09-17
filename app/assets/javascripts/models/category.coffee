@@ -4,6 +4,7 @@ Mpl.Category = DS.Model.extend(
   name        : DS.attr('string')
   description : DS.attr('string')
   type        : DS.attr('string')
+  user_type   : DS.attr('boolean')
 
   user         : DS.belongsTo('Mpl.User')
   transactions : DS.hasMany('Mpl.Transaction', key: 'transaction_ids')

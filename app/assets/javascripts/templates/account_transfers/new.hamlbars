@@ -1,6 +1,6 @@
 .modal-header
   %h3
-    = hb 'view Mpl.I18nView', :value => "account_transfer.new_title"
+    = hb 'view Mpl.I18nView', :value => "account_transfers.new_title"
 =hb 'view Mpl.ErrorsView'
 .modal-body
   =hb 'view Mpl.AccountTransferFormView', {:contentBinding => 'controller.content'}

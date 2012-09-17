@@ -5,6 +5,13 @@ Mpl.CategoriesIndexController = Ember.Controller.extend(
     @get('content').filterProperty('id')
   ).property('content.@each.id')
 
+  isAnySelected: (->
+    selected = @get('categories').filterProperty('isSelected', true)
+    if selected.get('length') > 0
+      return true
+    return false
+  ).property('categories.@each.isSelected')
+
 )
 
 Mpl.NewCategoryController = Mpl.NewRecordController.extend(

@@ -30,7 +30,9 @@ Mpl.LanguagesIndexView = Ember.View.extend (
     @close()
 
   doSave: ->
-    Mpl.set('language', I18n.locale)
-    @close()
+    @get('controller').record().set('language', I18n.locale)
+    if @get('controller').persistRecordInstance()
+      Mpl.set('language', I18n.locale)
+      @close()
     return
 )

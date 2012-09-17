@@ -5,13 +5,18 @@
         = hb 'view Mpl.I18nView', :value => "categories.new_income_category"
       %a.btn{:href => '#', :event => {:action => "doNewExpenseCategory"}}
         = hb 'view Mpl.I18nView', :value => "categories.new_expense_category"
-      %a.btn.dropdown-toggle{:href =>'#', 'data-toggle' => 'dropdown'}
-        %i.icon-cog
-        %span.caret
-      %ul.dropdown-menu
-        %li
-          %a{:href => '#', :event => {:action => "doGroup"}}
-            = hb 'view Mpl.I18nView', :value => "categories.group"
-        %li
-          %a{:href => '#', :event => {:action => "doUnGroup"}}
-            = hb 'view Mpl.I18nView', :value => "categories.ungroup"
+      =hb 'if controller.isAnySelected' do
+        %a.btn.dropdown-toggle{:href =>'#', 'data-toggle' => 'dropdown'}
+          %i.icon-cog
+          %span.caret
+        %ul.dropdown-menu
+          %li
+            %a{:href => '#', :event => {:action => "doGroup"}}
+              = hb 'view Mpl.I18nView', :value => "categories.group"
+          %li
+            %a{:href => '#', :event => {:action => "doUnGroup"}}
+              = hb 'view Mpl.I18nView', :value => "categories.ungroup"
+      =hb 'unless controller.isAnySelected' do
+        %span.btn.dropdown-toggle.disabled
+          %i.icon-cog
+          %span.caret

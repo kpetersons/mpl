@@ -1,4 +1,8 @@
-%td {{category.name}}
+%td
+  =hb 'unless category.user_type' do
+    = hb 'view Mpl.I18nView', :valueBinding => "category.name"
+  =hb 'if category.user_type' do
+    {{category.name}}
 %td {{category.type}}
 %td {{category.description}}
 %td.number {{category.formatted_total_all}}

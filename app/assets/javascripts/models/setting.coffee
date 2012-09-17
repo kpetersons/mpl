@@ -4,6 +4,7 @@ Mpl.Setting = DS.Model.extend
   date_format         : DS.attr('string')
   currency_format     : DS.attr('string')
   currency            : DS.attr('string')
+  language            : DS.attr('string')
 
   user        : DS.belongsTo('Mpl.User')
 

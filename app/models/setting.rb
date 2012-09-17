@@ -9,10 +9,11 @@
 #  currency        :string(255)
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  language        :string(255)      default("en")
 #
 
 class Setting < ActiveRecord::Base
-  attr_accessible :user_id, :date_format, :currency_format, :currency
+  attr_accessible :user_id, :date_format, :currency_format, :currency, :language
 
   belongs_to :user
 

@@ -1,2 +1,28 @@
 =hb 'view Mpl.ErrorsView'
-=hb 'view Mpl.EditSettingView', {:contentBinding => 'controller.content'}
+.modal-header
+  %h3
+    = hb 'view Mpl.I18nView', :value => "settings.edit_title"
+.modal-body
+  %form.form-horizontal
+    .control-group
+      %label.control-label
+        = hb 'view Mpl.I18nView', :value => "settings.date_format"
+      .controls
+        =hb 'view Ember.TextField', :valueBinding => 'content.date_format'
+    .control-group
+      %label.control-label
+        = hb 'view Mpl.I18nView', :value => "settings.currency_format"
+      .controls
+        =hb 'view Ember.TextField', :valueBinding => 'content.currency_format'
+    .control-group
+      %label.control-label
+        = hb 'view Mpl.I18nView', :value => "settings.currency"
+      .controls
+        =hb 'view Ember.TextField', :valueBinding => 'content.currency'
+.modal-footer
+  .btn-group.pull-right
+    %a.btn{'href' => '#', :event => {:action => 'doCancel', :target => 'this'}}
+      = hb 'view Mpl.I18nView', :value => "form.cancel"
+    %a.btn.btn-primary{'href' => '#', :event => {:action => 'doSave', :target => 'this'}}
+      = hb 'view Mpl.I18nView', :value => "form.save"
+
