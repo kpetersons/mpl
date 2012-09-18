@@ -1,5 +1,9 @@
 %td {{transaction.account.name}}
-%td {{transaction.category.name}}
+%td
+  =hb 'if transaction.category.user_type' do
+    {{transaction.category.name}}
+  =hb 'unless transaction.category.user_type' do
+    = hb 'view Mpl.I18nView', :valueBinding => 'transaction.category.name'
 %td {{transaction.description}}
 %td.number {{transaction.formatted_amount}}
 %td.date {{transaction.formatted_date_when}}

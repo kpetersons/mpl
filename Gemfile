@@ -23,7 +23,7 @@ end
 gem 'annotate', ">=2.5.0"
 gem 'clearance'
 
-gem 'twitter-bootstrap-rails', '~> 2.1.3'
+gem 'twitter-bootstrap-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'hamlbars'
 gem 'haml-rails'

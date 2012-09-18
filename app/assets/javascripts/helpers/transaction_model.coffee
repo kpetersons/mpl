@@ -19,8 +19,8 @@ Mpl.Transaction.reopen(
 
   className: (->
     if @get('type') == 'income'
-      return 'success'
-    return 'error'
+      return 'text-success'
+    return 'text-error'
   ).property('type')
 
 #  accountWillChange: (->

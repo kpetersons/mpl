@@ -1,4 +1,0 @@
-%caption Accounts
-=hb 'view Mpl.AccountsIndexHeaderView'
-=hb 'view Mpl.AccountsIndexFooterView'
-=hb 'view Mpl.AccountsIndexBodyView'
