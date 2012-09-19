@@ -1,5 +1,9 @@
+#= require ./category_group_router
+#= require_self
 Mpl.CategoryRouter = Ember.Route.extend
   route: '/categories'
+
+  category_groups: Mpl.CategoryGroupRouter
 
   connectOutlets: (router, event) ->
     router.get('applicationController').set('isHomeActive', '');
@@ -24,6 +28,8 @@ Mpl.CategoryRouter = Ember.Route.extend
     router.transitionTo('categories.new')
 
   doEditCategory: (router, event) -> router.transitionTo('categories.edit', event)
+
+  doGroup: (router, event) -> router.transitionTo('category_groups.new', event)
 
   index: Ember.Route.extend
     route: '/'

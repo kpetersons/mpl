@@ -12,6 +12,10 @@ Mpl.CategoriesIndexController = Ember.Controller.extend(
     return false
   ).property('categories.@each.isSelected')
 
+  categoryGroups: (->
+    @get('content').getEach('category_group')
+  ).property('content.@each.category_group.id')
+
 )
 
 Mpl.NewCategoryController = Mpl.NewRecordController.extend(

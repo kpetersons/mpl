@@ -46,6 +46,11 @@ I18n.translations =
       new_expense_category: 'Jauna izdevumu kategorija'
       group: 'Grupēt'
       ungroup: 'Atgrupēt'
+    category_groups:
+      category_groups: 'Kategoriju grupas'
+      new_title: 'Jauna kategorija'
+      edi_titlet: 'Rediģēt kategoriju'
+      name: 'Nosaukums'
     category:
       expense:
         account_transfer: 'Izejošs kontu transfers'
@@ -123,6 +128,11 @@ I18n.translations =
       new_expense_category: 'New expense category'
       group: 'Group'
       ungroup: 'Ungroup'
+    category_groups:
+      category_groups: 'Category groups'
+      new_title: 'New category'
+      edit_title: 'Edit category'
+      name: 'Name'
     category:
       expense:
         account_transfer: 'Outgoing account transfer'

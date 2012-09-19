@@ -37,3 +37,6 @@ Mpl.AccountTransfer = DS.Model.extend
   errors: (->
     @get('validationErrors')
   ).property('validationErrors')
+
+  persist: ->
+    @save()

@@ -1,0 +1,6 @@
+%tr
+  %th
+    = hb 'view Mpl.I18nView', :value => "category_groups.name"
+  %th.span5
+    = hb 'view Mpl.I18nView', :value => "category_groups.categories"
+  %th

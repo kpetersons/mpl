@@ -12,6 +12,7 @@ Mpl::Application.routes.draw do
   resources :transactions
   resources :settings
   resources :categories
+  resources :category_groups
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,5 @@
+%caption
+  = hb 'view Mpl.I18nView', :value => "category_groups.category_groups"
+=hb 'view Mpl.CategoryGroupsIndexHeaderView'
+=hb 'view Mpl.CategoryGroupsIndexFooterView'
+=hb 'view Mpl.CategoryGroupsIndexBodyView'

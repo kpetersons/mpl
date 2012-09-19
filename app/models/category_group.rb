@@ -10,9 +10,17 @@
 #
 
 class CategoryGroup < ActiveRecord::Base
-  attr_accessible :name, :user_id
+
+  attr_accessible :name, :user_id, :category_ids
 
   belongs_to :user
+
   has_many :categories
+
+  validates :name, :uniqueness => {:scope => :user_id}
+
+  def as_json(options = nil)
+    super(:except => [:created_at, :updated_at], :methods => [:errors, :category_ids])
+  end
 
 end

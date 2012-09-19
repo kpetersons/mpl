@@ -1,0 +1,6 @@
+%td {{categoryGroup.name}}
+%td {{categoryGroup.categories}}
+%td
+  .pull-right
+    %a{:href => '#', :event => {:action => "doEditCategoryGroup", :target => 'view'}}
+      = hb 'view Mpl.I18nView', :value => "form.edit"

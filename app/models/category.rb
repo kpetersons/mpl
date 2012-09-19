@@ -14,7 +14,9 @@
 #
 
 class Category < ActiveRecord::Base
-  set_inheritance_column :inh_type
+
+  self.inheritance_column='inh_type'
+
   attr_accessible :user_id, :name, :description, :type, :category_group_id, :user_type
 
   belongs_to :user

@@ -1,22 +1,16 @@
-Mpl.Category = DS.Model.extend(
-
+Mpl.CategoryGroup = DS.Model.extend
   id          : DS.attr('number')
   name        : DS.attr('string')
-  description : DS.attr('string')
-  type        : DS.attr('string')
-  user_type   : DS.attr('boolean')
 
-  user            : DS.belongsTo('Mpl.User')
-  category_group  : DS.belongsTo('Mpl.CategoryGroup')
-
-  transactions    : DS.hasMany('Mpl.Transaction', key: 'transaction_ids')
+  user         : DS.belongsTo('Mpl.User')
+  categories   : DS.hasMany('Mpl.Category', key: 'category_ids')
 
   isValid: ->
     @set('validationErrors', null)
     errors = Ember.ArrayProxy.create({ content: Ember.A() });
     if @isEmpty(@get('name'))
       errors.pushObject
-        'fieldError': 'Category name is mandatory!'
+        'fieldError': 'Group name is mandatory!'
         'fieldName': 'name'
     unless errors.get('empty')
       @set('validationErrors', errors)
@@ -26,7 +20,13 @@ Mpl.Category = DS.Model.extend(
     @get('validationErrors')
   ).property('validationErrors')
 
+  toJSON: (options)->
+    unless options
+      options = {associations: true}
+    if Ember.typeOf(options) == 'object'
+      options['associations'] = true
+    @._super(options)
+
+
   persist: ->
     @save()
-
-)

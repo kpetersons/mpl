@@ -1,0 +1,5 @@
+=hb 'if controller.category_groups.empty' do
+  %tr
+    %td{:colspan =>8 }
+=hb 'each category_group in controller.category_groups' do
+  =hb 'view Mpl.CategoriesBodyItemView', :categoryGroupBinding => 'categoryGroup'

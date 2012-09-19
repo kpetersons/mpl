@@ -14,10 +14,7 @@ Mpl.AccountTransfer.reopen(
 #  accountToDidChange: (->
 #    @set('newToAccount', @get('to_account'))
 #  ).observes('to_account')
-
-  persist: ->
-    @save()
-
+#
 #  didLoad: ->
 #    prevFromAcct = @get('previousFromAccount')
 #    newFromAcct = @get('newFromAccount')
