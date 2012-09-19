@@ -13,8 +13,12 @@ Mpl.CategoriesIndexController = Ember.Controller.extend(
   ).property('categories.@each.isSelected')
 
   categoryGroups: (->
-    @get('content').getEach('category_group')
+    @get('content').getEach('category_group').uniq().without(null)
   ).property('content.@each.category_group.id')
+
+  grouplessCategories: (->
+    @get('content').filterProperty('category_group', null)
+  ).property('content.@each.id')
 
 )
 

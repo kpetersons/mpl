@@ -2,4 +2,29 @@
   = hb 'view Mpl.I18nView', :value => "categories.categories"
 =hb 'view Mpl.CategoriesIndexHeaderView'
 =hb 'view Mpl.CategoriesIndexFooterView'
-=hb 'view Mpl.CategoriesIndexBodyView'
+=hb 'if controller.categories.empty' do
+  %tbody
+    %tr
+      %td{:colspan =>8 } &nbsp;
+=hb 'each categoryGroup in controller.categoryGroups' do
+  %tbody
+    %tr
+      %td{:colspan => 7}
+        {{categoryGroup.name}}
+      %td
+        .pull-right
+          %a{:href => '#'} Edit
+    =hb 'each category in categoryGroup.categories' do
+      =hb 'view Mpl.CategoriesBodyItemView', :categoryBinding => 'category', :classBinding => 'category.className'
+    %tr
+      %td
+      %td
+      %td
+      %td.number {{categoryGroup.formatted_total_all}}
+      %td.number {{categoryGroup.formatted_total_today}}
+      %td.number {{categoryGroup.formatted_total_week}}
+      %td.number {{categoryGroup.formatted_total_month}}
+      %td
+  %tbody
+    =hb 'each category in controller.grouplessCategories' do
+      =hb 'view Mpl.CategoriesBodyItemView', :categoryBinding => 'category', :classBinding => 'category.className'
